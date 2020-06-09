@@ -1,6 +1,5 @@
 package lecture7class;
 
-
 /*
  *   Class is used to create our own custom data type
  *      - It is a container for related methods
@@ -10,7 +9,6 @@ package lecture7class;
  *      - Object is nothing but individual working copy of the
  *      - the codes enclosed int the class, and data variables
  */
-
 public class AlphalefStudent {
 
     // ------ Data ----- //
@@ -25,8 +23,6 @@ public class AlphalefStudent {
     // that are called during object creation
     // calling this method right after the 'new' keyword
     // will result in object creation of this class.
-
-
     public AlphalefStudent() {
         studentName = "";
         studentId = 0;
@@ -40,6 +36,10 @@ public class AlphalefStudent {
     }
 
     // ----- Methods ---------//
+    /**
+     *
+     * @param newGpa
+     */
     public void modifyGpa(double newGpa) {
         if(newGpa < 0 && newGpa > 4) {
             throw new IllegalArgumentException("Input gpa value out of range.");
@@ -47,6 +47,10 @@ public class AlphalefStudent {
         this.gpa = newGpa;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStudentInfo() {
         String nameInfo = "Student full name: " + studentName;
         String idInfo =  "Student 6 digit ID: " + studentId;
@@ -61,22 +65,17 @@ public class AlphalefStudent {
         return info;
     }
 
+    /**
+     *
+     */
     public void terminateStudent()  {
         if(gpa >= 1.0) {
             System.out.println("Administrative error! You cannot terminiate this student.");
             System.out.println("This student has gpa more than 1.0. This process was recorded.");
             return;
         }
-
         this.studentId = 0;
         this.studentName = null;
         gpa = 0;
-        deleteObject();
     }
-
-    private void deleteObject() {
-        // delete the students record from the
-        // database
-    }
-
 }
