@@ -11,71 +11,90 @@ package lecture7class;
  */
 public class AlphalefStudent {
 
-    // ------ Data ----- //
-    String studentName;  // every Alphaleaf student has a name
-    int studentId;       // every Alphaleaf student has a unique 6 digit student ID
-    double gpa;          // every Alphaleaf student has current gpa with them
-    boolean terminated; // every Alphaleaf student has info on whether he/she has terminated or not
+    // ------------------- Fields ------------------- //
+    private String studentName;   // every Alphaleaf student has a name
+    private long studentId;       // every Alphaleaf student has a unique 9 digit student ID
+    private double gpa;           // every Alphaleaf student has current gpa with them
+    private boolean terminated;   // every Alphaleaf student has info on whether he/she has terminated or not
 
 
-    // ----- Constructors ------//
+
+    // ------------------- Constructor(s) -------------------//
     // These are very special methods called constructor
     // that are called during object creation
     // calling this method right after the 'new' keyword
     // will result in object creation of this class.
-    public AlphalefStudent() {
-        studentName = "";
-        studentId = 0;
-        gpa = 0.0;
-    }
-
-    public AlphalefStudent(String name, int id, double gpa) {
+    public AlphalefStudent(String name) {
         studentName = name;
-        studentId = id;
-        this.gpa = gpa;
+        studentId = sidFromDatabase();
+        gpa = 0.0;
+        terminated = false;
     }
 
-    // ----- Methods ---------//
-    /**
-     *
-     * @param newGpa
-     */
-    public void modifyGpa(double newGpa) {
+    // Helper method
+    // Capability: generated unique student ID
+    private long sidFromDatabase() {
+        long sid = (long)(Math.random() * 100000000L);
+        return sid;
+    }
+
+    public AlphalefStudent(String name, double gpa) {
+        studentName = name;
+        this.gpa = gpa;
+        studentId = sidFromDatabase();
+    }
+
+    // ------------------- Methods -------------------//
+
+    public void setGpa(double newGpa) {
         if(newGpa < 0 && newGpa > 4) {
             throw new IllegalArgumentException("Input gpa value out of range.");
         }
+        // if the codes here is executed
+        // that means that user of this method
+        // has provided us valid GPA value [0.0 ~ 4.0]
         this.gpa = newGpa;
     }
 
-    /**
-     *
-     * @return
-     */
-    public String getStudentInfo() {
-        String nameInfo = "Student full name: " + studentName;
-        String idInfo =  "Student 6 digit ID: " + studentId;
-        String academyHealth = "";
-        if(gpa > 2.0) {
-            academyHealth = "Student has good academic standing";
-        }else{
-            academyHealth = "Student has poor academic standing and in danger or termination.";
-        }
-
-        String info = nameInfo + idInfo + academyHealth;
-        return info;
+    public double getGpa() {
+        return this.gpa;
     }
 
-    /**
-     *
-     */
-    public void terminateStudent()  {
+
+    public void printStudentInfo() {
+        System.out.println("\n====================");
+        System.out.println("Student full name: " + studentName);
+        System.out.println("Student short ID : " + getShortId());
+        String academyHealth = "";
+        if(gpa > 2.0) {
+            System.out.println("Student has good academic standing");
+        }else{
+            System.out.println("Student has poor academic standing and in danger or termination.");
+        }
+        System.out.println("====================\n");
+    }
+
+    // Helper Method
+    // Capability: hides the this students' student ID which
+    // is sensitive information
+    private long getShortId() {
+        String id = String.valueOf(studentId);
+        id = id.substring(3);
+        long obsecuredId = Integer.valueOf(id);
+        return obsecuredId;
+    }
+
+
+    public void terminateThisStudent()  {
         if(gpa >= 1.0) {
             System.out.println("Administrative error! You cannot terminiate this student.");
             System.out.println("This student has gpa more than 1.0. This process was recorded.");
-            return;
+            return;  // exit the methods, don't go further
         }
         this.studentId = 0;
         this.studentName = null;
         gpa = 0;
+        // other utility codes like deleting student
+        // from database could go here.
     }
 }
