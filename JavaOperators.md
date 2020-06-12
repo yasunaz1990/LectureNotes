@@ -30,8 +30,8 @@ Note that all of the operators we will learn in this session are for the Data Ty
 
 ---
 ### Assignment Operator
-**symbol:**   `=` 
-**purpose:**   Assignment operators are used in Java to assign values to variables. The assignment operator assigns the value on its right to the variable on its left.
+**symbol**:   `=`
+**purpose**:   Assignment operators are used in Java to assign values to variables. The assignment operator assigns the value on its right to the variable on its left.
 **Example:**
 ```java
 int number;     // empty integer varialbe named 'number'
