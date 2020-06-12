@@ -18,7 +18,8 @@ Note that all of the operators we will learn in this session are for the Data Ty
 - integer
 - double 
 - boolean 
-**Types of operators:**
+
+**Types of operators**:
 - Assignment Operator 
 - Arithmetic Operator 
 - Compound Assignment Operator ( Variable Content Updater ) 
