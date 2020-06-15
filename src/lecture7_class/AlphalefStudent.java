@@ -24,6 +24,12 @@ public class AlphalefStudent {
     // that are called during object creation
     // calling this method right after the 'new' keyword
     // will result in object creation of this class.
+
+    public AlphalefStudent() {
+
+    }
+
+
     public AlphalefStudent(String name) {
         studentName = name;
         studentId = sidFromDatabase();

@@ -1,5 +1,8 @@
 package lecture7_class;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ObjectDemo {
 
 
@@ -8,10 +11,14 @@ public class ObjectDemo {
 
         // This AlphaleafStudent object will represent real student of
         // Alphaleaf Techschool in our java program.
-        AlphalefStudent ali = new AlphalefStudent("Ali Nazari");
-        ali.setGpa(3.4);
-        ali.printStudentInfo();
-        ali.terminateThisStudent();
-        ali.printStudentInfo();
+//        AlphalefStudent ali = new AlphalefStudent("Ali Nazari");
+//        ali.setGpa(3.4);
+//        ali.printStudentInfo();
+//        ali.terminateThisStudent();
+//        ali.printStudentInfo();
+
+
+
+
     }
 }
