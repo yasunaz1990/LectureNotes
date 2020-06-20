@@ -1,4 +1,4 @@
-package lecture7_class;
+package lecture8_inheritance;
 
 import java.util.Date;
 
