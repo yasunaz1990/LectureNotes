@@ -8,12 +8,6 @@ public class InheritanceDemo {
     public static void main(String[] args) {
 
         AlphalefStudent ali = new AlphalefStudent();
-
-        OmegaStudent nijat = new OmegaStudent();
-        nijat.setGpa(6.89);
-        nijat.printStudentInfo();
-
-
     }
 
 }
