@@ -5,4 +5,6 @@ public class Triangle extends Shape {
     public void dragTodraw() {
         System.out.println("△");
     }
+
+
 }

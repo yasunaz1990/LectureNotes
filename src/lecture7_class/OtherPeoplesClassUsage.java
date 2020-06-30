@@ -6,7 +6,6 @@ import java.util.Date;
 public class OtherPeoplesClassUsage {
 
     public static void main(String[] args) {
-
         // ------- Date Class -----------------//
         Date date = new Date();         // Representation of idea called Date
         String today = date.toString(); // Getting a current date when this code is executed

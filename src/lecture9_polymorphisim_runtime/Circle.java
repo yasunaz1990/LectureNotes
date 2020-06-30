@@ -11,5 +11,4 @@ public class Circle extends Shape {
     public void printCircleInfo(){
         System.out.println("I am an object of type Circle");
     }
-
 }

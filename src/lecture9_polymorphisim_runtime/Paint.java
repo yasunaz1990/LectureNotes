@@ -14,13 +14,12 @@ public class Paint {
 
         // for-each
         for(Shape s : shapeSection) {
-            if(s instanceof Circle){
-               Circle c = (Circle)s;
-               ((Circle) s).printCircleInfo();  // example
-            }
+//            if(s instanceof Circle){
+//               Circle c = (Circle)s;
+//               ((Circle) s).printCircleInfo();  // example
+//            }
             s.dragTodraw();
         }
-
 
     }
 }
