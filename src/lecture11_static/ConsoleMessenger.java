@@ -1,4 +1,4 @@
-package lecture7_class;
+package lecture11_static;
 
 /**
  * @author Nijat Muhtar
@@ -162,7 +162,7 @@ public class ConsoleMessenger {
      *
      * @param message
      */
-    public static void bocker(String message) {
+    public static void blocker(String message) {
         System.out.println(RED + message + RESET);
     }
 

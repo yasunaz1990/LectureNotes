@@ -1,10 +1,19 @@
 package lecture11_static;
 
+/*
+Static fields and methods are shared with
+all instances. They are for values which
+are specific to the
+class and not a specific instance.
+ */
+
 public class Person {
     // ---- Static Fields --- //
-    private static int personCount;
+    public static int personCount;
     private static String[] names = new String[100];
     private static int idx = 0;
+
+
 
     // --- Fields ---- //
     private String name;

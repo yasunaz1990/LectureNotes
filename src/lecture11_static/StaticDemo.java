@@ -12,5 +12,17 @@ public class StaticDemo {
         Person.showAllPersonCount();
         Person.showAllPersonNames();
 
+        // Using ConsoleMessenger class
+        ConsoleMessenger.blocker("We found an error!");
+        ConsoleMessenger.warning("We found an potential erro!");
+
+        // Using bar
+        ConsoleMessenger.displayBlocks(10, "Ford");
+        ConsoleMessenger.displayBlocks(20, "Toyota");
+        ConsoleMessenger.displayBlocks(40, "Amazon");
+        ConsoleMessenger.displayBlocks(15, "Microsoft");
+        ConsoleMessenger.displayBlocks(5, "Nissan");
+
+
     }
 }
